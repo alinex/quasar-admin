@@ -24,7 +24,7 @@
     "dev": "node build/script.dev.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/script.build.js",
-    "start": "http-server dist -o"
+    "serve": "quasar serve"
   },
   "dependencies": {
     "babel-runtime": "^6.25.0",
@@ -62,7 +62,6 @@
     "glob": "^7.1.2",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.0",
-    "http-server": "^0.10.0",
     "json-loader": "^0.5.7",
     "opn": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",

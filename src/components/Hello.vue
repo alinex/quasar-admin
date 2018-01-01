@@ -1,7 +1,7 @@
 <template>
   <q-layout
     ref="layout"
-    view="lHh Lpr fff"
+    view="hHh Lpr fff"
     :left-class="{'bg-grey-2': true}"
   >
     <q-toolbar slot="header" class="glossy">
@@ -13,7 +13,7 @@
       </q-btn>
 
       <q-toolbar-title>
-        Quasar App
+        Alinex Admin Panel
         <div slot="subtitle">Running on Quasar v{{$q.version}}</div>
       </q-toolbar-title>
     </q-toolbar>
