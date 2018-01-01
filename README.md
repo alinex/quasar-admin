@@ -9,11 +9,14 @@
 $ npm install
 
 # serve with hot reload at localhost:8080
-$ quasar dev
+$ npm start dev
 
 # lint code
-$ quasar lint
+$ npm start lint
 
 # build for production with minification
-$ quasar build
+$ npm start build
+
+# run the productive web
+$ npm start
 ```
