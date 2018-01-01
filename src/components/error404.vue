@@ -55,11 +55,11 @@ export default {
 <style lang="stylus">
 .error-page
   .error-code
-    height 50vh
+    height 40vh
     width 100%
-    padding-top 10vh
+    padding-top 5vh
     @media (orientation: landscape) {
-      font-size 20vw
+      font-size 30vh
     }
     @media (orientation: portrait) {
       font-size 20vh
@@ -69,6 +69,7 @@ export default {
   .error-card
     border-radius 2px
     margin-top -50px
+    margin-bottom 50px
     width 80vw
     max-width 600px
     padding 25px

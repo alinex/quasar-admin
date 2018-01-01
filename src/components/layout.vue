@@ -45,6 +45,16 @@
 
     <router-view />
 
+    <!-- Footer -->
+    <q-toolbar slot="footer" color="faded">
+      <q-toolbar-title>
+        &copy; Alexander Schilling 2018
+      </q-toolbar-title>
+      <q-btn icon="fa-github" flat @click="launch('https://github.com/alinex/quasar-admin')">
+        Version 0.1.0
+      </q-btn>
+    </q-toolbar>
+
   </q-layout>
 </template>
 
