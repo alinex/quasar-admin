@@ -1,22 +1,29 @@
 # Admin Panel
 
-> My first Quasar project
+> An interface to make operation tasks easy and fast.
 
-## Build Setup
+
+## Managing Development Environment
 
 ``` bash
 # install dependencies
 $ npm install
 
 # serve with hot reload at localhost:8080
-$ npm start dev
+$ npm run dev
 
 # lint code
-$ npm start lint
+$ npm run lint
 
 # build for production with minification
-$ npm start build
+$ npm run build
 
 # run the productive web
 $ npm start
+
+# serve development and electron development
+$ npm run electron-dev
+
+# build electron applications
+$ npm run electron-build
 ```

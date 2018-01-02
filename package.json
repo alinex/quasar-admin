@@ -24,7 +24,9 @@
     "dev": "node build/script.dev.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/script.build.js",
-    "serve": "quasar serve"
+    "serve": "quasar serve",
+    "electron-dev": "node build/script.dev.js & cd electron && quasar dev",
+    "electron-build": "node build/script.build.js && cd electron && quasar build"
   },
   "dependencies": {
     "babel-runtime": "^6.25.0",
