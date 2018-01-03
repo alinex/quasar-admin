@@ -13,6 +13,18 @@
         Alinex Admin Panel
         <div slot="subtitle">makes operations easy and fast</div>
       </q-toolbar-title>
+
+      <q-btn flat @click="goTo('signin')" v-show="!authenticated">
+        Sign In
+      </q-btn>
+      <q-btn flat @click="goTo('register')" v-show="!authenticated">
+        Register
+      </q-btn>
+      <q-btn flat round @click="signout" v-show="authenticated">
+        <q-icon name="exit_to_app" />
+        <q-tooltip anchor="bottom middle" self="top middle" :offset="[0, 20]">Signout</q-tooltip>
+      </q-btn>
+      
     </q-toolbar>
 
     <div slot="left">
@@ -89,6 +101,12 @@ export default {
   },
   data () {
     return {
+      user: null
+    }
+  },
+  computed: {
+    authenticated () {
+      return this.$data.user !== null
     }
   },
   methods: {

@@ -30,6 +30,8 @@ export default new VueRouter({
       component: load('layout'),
       children: [
         { path: '', component: load('dashboard') },
+        { path: 'login', component: load('auth/login') },
+        { path: 'register', component: load('auth/register') },
         { path: 'hello', component: load('Hello') },
         { path: '*', component: load('error404') } // Not found
       ]

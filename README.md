@@ -2,6 +2,31 @@
 
 > An interface to make operation tasks easy and fast.
 
+## Next steps
+
+- implement authentication
+  - check login with jwt
+  - layout will ask to login if not done
+    - login
+    - Register
+    - forgotten
+  - user entry in toolbar
+    - logout
+    - profile
+  - client auth api
+    - mock with local database  
+    - using jwt to server
+
+- test menu
+  - about entry
+
+- server connection
+  - node-admin server
+    - based on feathers, hapi or exchange
+  - rest server
+  - asking for server date
+  - date page display client, server date and difference
+
 
 ## Managing Development Environment
 
