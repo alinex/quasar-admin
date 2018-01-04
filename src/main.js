@@ -15,9 +15,11 @@ import Quasar, { Loading } from 'quasar'
 import router from './router'
 import auth from 'auth'
 import axios from 'axios'
+import Vuelidate from 'vuelidate'
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
+Vue.use(Vuelidate)
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')

@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import auth from 'auth'
+import { LocalStorage } from 'quasar'
 
 Vue.use(VueRouter)
 
@@ -25,7 +27,26 @@ export default new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
 
   routes: [
+    { path: '/', component: load('welcome/welcome'), beforeEnter: checkAuth }, // Default
     {
+      path: '/',
+      component: load('layouts/auth'),
+      children: [
+        { path: 'login', component: load('auth/login') },
+        { path: 'register', component: load('auth/register') }
+      ]
+    },
+    {
+      path: '/',
+      component: load('layouts/menu'),
+      beforeEnter: checkAuth,
+      children: [
+        { path: 'profile', component: load('profile/profile'), meta: { title: 'Profile' } },
+        { path: 'jokes', component: load('jokes/jokes'), meta: { title: 'Jokes' } }
+      ]
+    },
+    { path: '*', component: load('error404') } // Not found
+    /*    {
       path: '/',
       component: load('layout'),
       children: [
@@ -35,6 +56,22 @@ export default new VueRouter({
         { path: 'hello', component: load('Hello') },
         { path: '*', component: load('error404') } // Not found
       ]
-    }
+    } */
   ]
 })
+
+function checkAuth (to, from, next) {
+  // authenticated but no page selection
+  if (to.path === '/' && auth.user.authenticated) {
+    next('/profile')
+  }
+  // access restricted
+  else if (!LocalStorage.get.item('id_token') && to.path !== '/') {
+    console.log('not logged')
+    next('/login')
+  }
+  // access allowed
+  else {
+    next()
+  }
+}

@@ -1,6 +1,6 @@
 <template>
-  <div class="error-page bg-light column items-center no-wrap">
-    <div class="error-code bg-primary flex items-center content-center justify-center">
+  <div class="error-page window-height window-width bg-light column items-center no-wrap">
+    <div class="error-code bg-primary flex items-center justify-center">
       404
     </div>
     <div>
@@ -9,19 +9,19 @@
         <p class="caption text-center">Oops. Nothing here...</p>
         <p class="text-center group">
           <q-btn
-            v-if="canGoBack"
-            color="primary"
-            push
-            @click="goBack"
-            icon="keyboard_arrow_left"
+              v-if="canGoBack"
+              color="primary"
+              push
+              @click="goBack"
+              icon="keyboard_arrow_left"
           >
             Go back
           </q-btn>
           <q-btn
-            color="primary"
-            push
-            @click="$router.replace('/')"
-            icon-right="home"
+              color="primary"
+              push
+              @click="$router.replace('/')"
+              icon-right="home"
           >
             Go home
           </q-btn>
@@ -32,44 +32,38 @@
 </template>
 
 <script>
-import { QBtn, QIcon } from 'quasar'
+  import { QBtn, QIcon } from 'quasar'
 
-export default {
-  components: {
-    QBtn,
-    QIcon
-  },
-  data () {
-    return {
-      canGoBack: window.history.length > 1
-    }
-  },
-  methods: {
-    goBack () {
-      window.history.go(-1)
+  export default {
+    components: {
+      QBtn,
+      QIcon
+    },
+    data () {
+      return {
+        canGoBack: window.history.length > 1
+      }
+    },
+    methods: {
+      goBack () {
+        window.history.go(-1)
+      }
     }
   }
-}
 </script>
 
 <style lang="stylus">
-.error-page
-  .error-code
-    height 40vh
-    width 100%
-    padding-top 5vh
-    @media (orientation: landscape) {
-      font-size 30vh
-    }
-    @media (orientation: portrait) {
-      font-size 20vh
-    }
-    color rgba(255, 255, 255, .2)
-    overflow hidden
+  .error-page
+    .error-code
+      height 50vh
+      width 100%
+      padding-top 15vh
+      font-size 30vmax
+      color rgba(255, 255, 255, .2)
+      overflow hidden
   .error-card
     border-radius 2px
     margin-top -50px
-    margin-bottom 50px
     width 80vw
     max-width 600px
     padding 25px

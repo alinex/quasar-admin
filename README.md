@@ -28,6 +28,16 @@
   - date page display client, server date and difference
 
 
+## Technologies
+
+- [Vue.js](https://vuejs.org/v2/guide/installation.html) as the base technology for the client interface
+- [vue-router](https://router.vuejs.org/en/) for client side routing
+- [Quasar Framework](http://quasar-framework.org/guide/) components and base structure with electron and cordova integration
+- [Vuelidate](https://monterail.github.io/vuelidate/#getting-started) for form validation
+- [Axios](https://github.com/axios/axios) HTTP client library
+- [JWT](https://jwt.io/#debugger) JSON Web Token for authentication
+- [Stylus](http://stylus-lang.com/) CSS language
+
 ## Managing Development Environment
 
 ``` bash

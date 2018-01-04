@@ -45,7 +45,11 @@ export default {
         }
       })
       .catch((error) => {
-        Toast.create.negative(error.response.data.message)
+        const msg = error.response.data.message ? error.response.data.message : '<b>' + error.message + '</b><br />' + error.response.config.baseURL
+        Toast.create.negative({
+          html: msg,
+          timeout: 10000
+        })
       })
   },
 
