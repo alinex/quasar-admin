@@ -8,8 +8,8 @@
     </q-toolbar>
 
     <div class="layout-view layout-padding">
-      <q-field icon="mail">
-        <q-input v-model="credentials.email" placeholder="Your email address" @blur="$v.credentials.email.$touch" :error="$v.credentials.email.$error" class="full-width" />
+      <q-field icon="mail" error-label="A valid email address is needed">
+        <q-input v-model="credentials.email" placeholder="Your email address" @blur="$v.credentials.email.$touch" :error="$v.credentials.email.$error" class="full-width" ref="email" />
       </q-field>
       <q-field icon="vpn_key">
         <q-input v-model="credentials.password" type="password" placeholder="Your password" @blur="$v.credentials.password.$touch" :error="$v.credentials.password.$error" class="full-width" />
@@ -36,6 +36,15 @@
           password: ''
         }
       }
+    },
+
+    mounted () {
+      // on next Vue tick, to ensure
+      // our Vue reference exists
+      this.$nextTick(() => {
+        // calling "next()" method:
+        this.$refs.email.focus()
+      })
     },
 
     validations: {

@@ -6,10 +6,7 @@
 
 - implement authentication
   - check login with jwt
-  - layout will ask to login if not done
-    - login
-    - Register
-    - forgotten
+  - forgotten password
   - user entry in toolbar
     - logout
     - profile

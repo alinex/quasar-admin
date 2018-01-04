@@ -29,7 +29,7 @@ import 'quasar-extras/material-icons'
 import 'quasar-extras/fontawesome'
 // import 'quasar-extras/animate'
 
-axios.defaults.baseURL = 'http://localhost:8080/api/v1'
+axios.defaults.baseURL = 'http://localhost:8081/api/v1'
 // Check if user is logged in or not + refresh token
 auth.checkAuth(this)
 

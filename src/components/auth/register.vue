@@ -9,7 +9,7 @@
 
     <div class="layout-view layout-padding">
       <q-field icon="face">
-        <q-input v-model="credentials.name" placeholder="Your name" @blur="$v.credentials.name.$touch" :error="$v.credentials.name.$error" class="full-width" />
+        <q-input v-model="credentials.name" placeholder="Your name" @blur="$v.credentials.name.$touch" :error="$v.credentials.name.$error" class="full-width" ref="email" />
       </q-field>
       <q-field icon="mail" error-label="A valid email address is needed">
         <q-input v-model="credentials.email" placeholder="Your email address" @blur="$v.credentials.email.$touch" :error="$v.credentials.email.$error" class="full-width" />
@@ -43,6 +43,15 @@
       }
     },
 
+    mounted () {
+      // on next Vue tick, to ensure
+      // our Vue reference exists
+      this.$nextTick(() => {
+        // calling "next()" method:
+        this.$refs.email.focus()
+      })
+    },
+
     validations: {
       credentials: {
         name: { required },
@@ -56,7 +65,6 @@
         this.$v.credentials.$touch()
         if (this.$v.credentials.$error) {
           Toast.create('Please review fields again.')
-          console.log(this.$v.credentials.$error)
           return
         }
         auth.signup(this.credentials, 'profile')
