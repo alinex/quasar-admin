@@ -24,6 +24,15 @@
   - asking for server date
   - date page display client, server date and difference
 
+## Architecture
+
+The application consists of two components:
+
+1. The **Frontend** (this module) which is used as the interface for the user on any device.
+2. **[REST Server](https://github.com/alinex/node-admin)** which holds the data for the frontend display.
+
+The Frontend itself may be hosted on the same webserver as the REST Server or on
+any other static server. It may also be used ass desktop or mobile-app. 
 
 ## Technologies
 
