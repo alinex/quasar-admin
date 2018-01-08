@@ -34,8 +34,7 @@
 </style>
 
 <script>
-  import { GoBack, QLayout, QToolbar, QBtn, QIcon, QToolbarTitle, QList, QSideLink, QItemSide, QItemMain, QItem, QItemTile, QListHeader } from 'quasar'
-  import Auth from '../../auth'
+  import { GoBack, QToolbar, QBtn, QIcon, QToolbarTitle } from 'quasar'
 
   export default{
     data () {
@@ -44,23 +43,7 @@
       }
     },
 
-    watch: {
-      '$route' () {
-        this.title = this.$route.meta.title
-      }
-    },
-
-    mounted () {
-      this.title = this.$route.meta.title
-    },
-
-    methods: {
-      logout () {
-        Auth.logout()
-      }
-    },
-
-    components: { QLayout, QToolbar, QBtn, QIcon, QToolbarTitle, QList, QSideLink, QItemSide, QItemMain, QItem, QItemTile, QListHeader },
+    components: { QToolbar, QBtn, QIcon, QToolbarTitle },
 
     directives: { GoBack }
   }

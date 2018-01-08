@@ -5,6 +5,9 @@
   "private": true,
   "title": "Alinex Admin Panel",
   "description": "Alinex Admin Interface",
+  "keywords": [
+    "admin", "console", "frontend"
+  ],
   "license": "Apache-2.0",
   "author": {
     "name": "Alexander Schilling",
@@ -12,7 +15,7 @@
     "web": "http://alinex.de"
   },
   "contributors": [],
-  "copyright": "Alexander Schilling 2016-2017",
+  "copyright": "Alexander Schilling 2018",
   "homepage": "https://alinex.gitbooks.io/quasar-admin/",
   "repository": {
     "type": "git",
@@ -24,7 +27,7 @@
     "dev": "node build/script.dev.js",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/script.build.js",
-    "serve": "quasar serve",
+    "start": "node build/script.build.js && quasar serve",
     "electron-dev": "node build/script.dev.js & cd electron && quasar dev",
     "electron-build": "node build/script.build.js && cd electron && quasar build"
   },

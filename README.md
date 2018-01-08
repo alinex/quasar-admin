@@ -32,7 +32,7 @@ The application consists of two components:
 2. **[REST Server](https://github.com/alinex/node-admin)** which holds the data for the frontend display.
 
 The Frontend itself may be hosted on the same webserver as the REST Server or on
-any other static server. It may also be used ass desktop or mobile-app. 
+any other static server. It may also be used ass desktop or mobile-app.
 
 ## Technologies
 
@@ -59,7 +59,7 @@ $ npm run lint
 # build for production with minification
 $ npm run build
 
-# run the productive web
+# run the productive web at localhost:3000 and localhost:3001 (BrowserSync)
 $ npm start
 
 # serve development and electron development
@@ -68,3 +68,19 @@ $ npm run electron-dev
 # build electron applications
 $ npm run electron-build
 ```
+
+## License
+
+(C) Copyright 2018 Alexander Schilling
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+>  <https://www.apache.org/licenses/LICENSE-2.0>
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

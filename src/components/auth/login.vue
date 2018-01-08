@@ -1,7 +1,7 @@
 <template>
   <div class="full-width">
     <q-toolbar color="secondary">
-      <q-icon name="edit" />
+      <q-icon name="vpn_key" />
       <q-toolbar-title>
         Login
       </q-toolbar-title>
@@ -16,8 +16,8 @@
       </q-field>
 
       <div class="submit row reverse">
-        <q-btn color="primary" @click="submit()">Login</q-btn>
-        <q-btn color="secondary" v-go-back=" '/' ">Cancel</q-btn>
+        <q-btn color="primary" icon="vpn_key" @click="submit()">Login</q-btn>
+        <q-btn color="secondary" icon="cancel" v-go-back=" '/' ">Cancel</q-btn>
       </div>
     </div>
   </div>
