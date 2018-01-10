@@ -26,7 +26,6 @@
 <script>
   import { GoBack, QBtn, QToolbar, QIcon, QToolbarTitle, QField, QInput, Toast } from 'quasar'
   import { required, minLength, email } from 'vuelidate/lib/validators'
-  import auth from '../../auth'
 
   export default {
     data () {
@@ -62,7 +61,7 @@
           console.log(this.$v.credentials.$error)
           return
         }
-        auth.login(this.credentials, 'profile')
+        // auth.login(this.credentials, 'profile')
       }
     },
 

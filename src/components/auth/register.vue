@@ -30,7 +30,6 @@
 <script>
   import { GoBack, QBtn, QToolbar, QIcon, QToolbarTitle, QField, QInput, Toast } from 'quasar'
   import { required, minLength, email } from 'vuelidate/lib/validators'
-  import auth from '../../auth'
 
   export default {
     data () {
@@ -67,7 +66,7 @@
           Toast.create('Please review fields again.')
           return
         }
-        auth.signup(this.credentials, 'profile')
+        // auth.signup(this.credentials, 'profile')
       }
     },
 

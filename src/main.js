@@ -11,15 +11,18 @@ require(`./themes/app.${__THEME}.styl`)
 // require(`quasar/dist/quasar.ie.${__THEME}.css`)
 
 import Vue from 'vue'
-import Quasar, { Loading } from 'quasar'
+import Quasar from 'quasar'
 import router from './router'
-import auth from 'auth'
-import axios from 'axios'
 import Vuelidate from 'vuelidate'
+import vueFeathers from 'vue-feathers'
+
+import feathersClient from './feathers-client'
+import store from './store'
 
 Vue.config.productionTip = false
-Vue.use(Quasar) // Install Quasar Framework
+Vue.use(Quasar)
 Vue.use(Vuelidate)
+Vue.use(vueFeathers, feathersClient)
 
 if (__THEME === 'mat') {
   require('quasar-extras/roboto-font')
@@ -29,37 +32,12 @@ import 'quasar-extras/material-icons'
 import 'quasar-extras/fontawesome'
 // import 'quasar-extras/animate'
 
-axios.defaults.baseURL = 'http://localhost:8081/api/v1'
-// Check if user is logged in or not + refresh token
-auth.checkAuth(this)
-
-// Loading indicator for ajax requests + refresh token if token is expired
-axios.interceptors.request.use(function (config) {
-  Loading.show()
-  return config
-}, function (error) {
-  Loading.hide()
-  return Promise.reject(error)
-})
-
-axios.interceptors.response.use(function (response) {
-  Loading.hide()
-  // Refresh Token if token is expired
-  if (response.status === 401 && response.body.error === 'token_expired') {
-    auth.refreshToken()
-    auth.showLoading()
-  }
-  return response
-}, function (error) {
-  Loading.hide()
-  return Promise.reject(error)
-})
-
 Quasar.start(() => {
   /* eslint-disable no-new */
   new Vue({
     el: '#q-app',
     router,
+    store,
     render: h => h(require('./App').default)
   })
 })

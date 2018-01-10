@@ -50,16 +50,21 @@
 
   .hint
     padding 30px
-
 </style>
 
 <script>
   import { QBtn } from 'quasar'
+  import { mapState } from 'vuex'
   import router from '../../router'
+  import { INCREMENT } from '../../store/mutation-types'
 
   export default {
+    computed: mapState(['count']),
     methods: {
       goTo (link) {
+        this.$store.commit(INCREMENT)
+        console.log(this.count) // -> 1
+
         router.push(link)
       }
     },

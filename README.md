@@ -38,10 +38,12 @@ any other static server. It may also be used ass desktop or mobile-app.
 
 - [Vue.js](https://vuejs.org/v2/guide/installation.html) as the base technology for the client interface
 - [vue-router](https://router.vuejs.org/en/) for client side routing
+- [Vuex](https://vuex.vuejs.org/en/) centralized state management
 - [Quasar Framework](http://quasar-framework.org/guide/) components and base structure with electron and cordova integration
 - [Vuelidate](https://monterail.github.io/vuelidate/#getting-started) for form validation
-- [Axios](https://github.com/axios/axios) HTTP client library
+- [feathers-vuex](https://github.com/feathers-plus/feathers-vuex) feathers server integration
 - [JWT](https://jwt.io/#debugger) JSON Web Token for authentication
+- [Axios](https://github.com/axios/axios) HTTP client library
 - [Stylus](http://stylus-lang.com/) CSS language
 
 ## Managing Development Environment

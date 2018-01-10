@@ -42,7 +42,6 @@
 
 <script>
   import { GoBack, QLayout, QToolbar, QBtn, QIcon, QToolbarTitle, QList, QSideLink, QItemSide, QItemMain, QItem, QItemTile, QListHeader } from 'quasar'
-  import Auth from '../../auth'
 
   export default{
     data () {
@@ -63,7 +62,7 @@
 
     methods: {
       logout () {
-        Auth.logout()
+        // Auth.logout()
       }
     },
 
