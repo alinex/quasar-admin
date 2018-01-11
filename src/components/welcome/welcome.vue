@@ -17,7 +17,7 @@
     </div>
     <div class="hint">
       <p>Restricted access for staff only!</p>
-      <p>You are {{auth.user.email}}</p>
+      <p>You are {{auth.user ? auth.user.email : 'unknown'}}</p>
     </div>
   </div>
 </template>
