@@ -4,8 +4,6 @@ import Vuex from 'vuex'
 import feathersVuex from 'feathers-vuex'
 import feathersClient from '../feathers-client'
 
-import { INCREMENT } from './mutation-types'
-
 const { service, auth } = feathersVuex(feathersClient, { idField: '_id' })
 
 Vue.use(Vuex)
@@ -13,8 +11,9 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',
   plugins: [
+    service('users'),
     service('messages'),
-    auth()
+    auth({ userService: 'users' })
   ],
   //   getters,
   modules: {
@@ -25,7 +24,7 @@ const store = new Vuex.Store({
     count: 0
   },
   mutations: {
-    [INCREMENT] (state) {
+    increment (state) {
       state.count++
     }
   }

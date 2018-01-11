@@ -26,6 +26,7 @@
 <script>
   import { GoBack, QBtn, QToolbar, QIcon, QToolbarTitle, QField, QInput, Toast } from 'quasar'
   import { required, minLength, email } from 'vuelidate/lib/validators'
+  import { mapMutations, mapActions } from 'vuex'
 
   export default {
     data () {
@@ -61,8 +62,26 @@
           console.log(this.$v.credentials.$error)
           return
         }
-        // auth.login(this.credentials, 'profile')
-      }
+        this.authenticate({
+          strategy: 'local',
+          email: this.credentials.email,
+          password: this.credentials.password
+        })
+          // Just use the returned error instead of mapping it from the store.
+          .catch(error => {
+            // Convert the error to a plain object and add a message.
+            let type = error.className
+            error = Object.assign({}, error)
+            error.message = (type === 'not-authenticated')
+              ? 'Incorrect email or password.'
+              : 'An error prevented login: ' + error.message
+            Toast.create(error.message)
+          })
+      },
+      ...mapMutations('auth', {
+        clearAuthenticateError: 'clearAuthenticateError'
+      }),
+      ...mapActions('auth', ['authenticate'])
     },
 
     components: { QBtn, QToolbar, QIcon, QToolbarTitle, QField, QInput },

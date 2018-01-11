@@ -25,6 +25,11 @@ export default new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
 
   routes: [
+    { path: '', component: load('welcome/welcome') },
+    { path: '/login', component: load('auth/login') },
+    { path: '/signup', component: load('auth/register') },
+    { path: '/chat', component: load('chat/chat') },
+    /*
     { path: '/', component: load('welcome/welcome') }, // Default
     {
       path: '/',
@@ -41,7 +46,7 @@ export default new VueRouter({
         { path: 'profile', component: load('profile/profile'), meta: { title: 'Profile' } }
         // { path: 'jokes', component: load('jokes/jokes'), meta: { title: 'Jokes' } }
       ]
-    },
+    }, */
     { path: '*', component: load('error404') } // Not found
   ]
 })

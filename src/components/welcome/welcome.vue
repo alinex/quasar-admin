@@ -17,6 +17,7 @@
     </div>
     <div class="hint">
       <p>Restricted access for staff only!</p>
+      <p>You are {{auth.user.email}}</p>
     </div>
   </div>
 </template>
@@ -56,14 +57,14 @@
   import { QBtn } from 'quasar'
   import { mapState } from 'vuex'
   import router from '../../router'
-  import { INCREMENT } from '../../store/mutation-types'
 
   export default {
-    computed: mapState(['count']),
+    computed: mapState(['auth', 'count']),
     methods: {
       goTo (link) {
-        this.$store.commit(INCREMENT)
+        this.$store.commit('increment')
         console.log(this.count) // -> 1
+        console.log(this.auth.user) // -> 1
 
         router.push(link)
       }
