@@ -29,6 +29,7 @@ export default new VueRouter({
     { path: '/login', component: load('auth/login') },
     { path: '/signup', component: load('auth/register') },
     { path: '/chat', component: load('chat/chat') },
+    { path: '/test/public', component: load('test/public') },
     /*
     { path: '/', component: load('welcome/welcome') }, // Default
     {

@@ -34,6 +34,15 @@ The application consists of two components:
 The Frontend itself may be hosted on the same webserver as the REST Server or on
 any other static server. It may also be used ass desktop or mobile-app.
 
+## Features
+
+- universal app for browser, Android, IOS, Windows, Mac OS and Linux
+- responsive design using FlexBox
+- modern interactive layout with animations, shadow-DOM and data binding
+- JavaScript ES8, Stylus CSS
+- client validation
+- component based widgets
+
 ## Technologies
 
 - [Vue.js](https://vuejs.org/v2/guide/installation.html) as the base technology for the client interface
