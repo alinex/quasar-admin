@@ -25,13 +25,12 @@ export default new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
 
   routes: [
-    { path: '', component: load('welcome/welcome') },
-    { path: '/login', component: load('auth/login') },
-    { path: '/signup', component: load('auth/register') },
-    { path: '/chat', component: load('chat/chat') },
-    { path: '/test/public', component: load('test/public') },
+    // { path: '', component: load('welcome/welcome') },
+    // { path: '/login', component: load('auth/login') },
+    // { path: '/signup', component: load('auth/register') },
+    // { path: '/chat', component: load('chat/chat') },
+    // { path: '/test/public', component: load('test/public') },
     /*
-    { path: '/', component: load('welcome/welcome') }, // Default
     {
       path: '/',
       component: load('layouts/auth'),
@@ -39,15 +38,16 @@ export default new VueRouter({
         { path: 'login', component: load('auth/login') },
         { path: 'register', component: load('auth/register') }
       ]
-    },
+    }, */
     {
       path: '/',
       component: load('layouts/menu'),
       children: [
-        { path: 'profile', component: load('profile/profile'), meta: { title: 'Profile' } }
-        // { path: 'jokes', component: load('jokes/jokes'), meta: { title: 'Jokes' } }
+        { path: '/', component: load('welcome/welcome') }, // Default
+        { path: 'profile', component: load('profile/profile'), meta: { title: 'Profile' } },
+        { path: 'test/public', component: load('test/public'), meta: { title: 'Public Test Page' } }
       ]
-    }, */
+    },
     { path: '*', component: load('error404') } // Not found
   ]
 })
