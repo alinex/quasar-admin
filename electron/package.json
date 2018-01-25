@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development electron src/main.js",
     "clean": "node build/script.clean.js",
-    "build": "node build/script.build.js"
+    "build": "node build/script.build.js",
+    "pack": "cd dist/*-linux-x64 && tar -czvf ../alinex-admin-linux.tgz * && cd ../*-win32-x64 && zip -r ../alinex-admin-win.zip * && cd ../*-darwin-x64 && zip -r ../alinex-admin-darwin.zip *"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
