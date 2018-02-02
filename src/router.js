@@ -44,6 +44,7 @@ export default new VueRouter({
       component: load('layouts/menu'),
       children: [
         { path: '/', component: load('welcome/welcome') }, // Default
+        { path: 'info', component: load('info/info'), meta: { title: 'Info' } },
         { path: 'profile', component: load('profile/profile'), meta: { title: 'Profile' } },
         { path: 'test/public', component: load('test/public'), meta: { title: 'Public Test Page' } }
       ]

@@ -33,7 +33,11 @@
     <div slot="left">
       <q-list-header><b>Admin Modules</b></q-list-header>
       <q-list no-border link inset-separator>
-        <q-collapsible label="Communication">
+        <q-collapsible label="Help">
+          <q-side-link item to="/info">
+            <q-item-side icon="info" />
+            <q-item-main label="Info"/>
+          </q-side-link>
           <q-side-link item to="/chat">
             <q-item-side icon="chat" />
             <q-item-main label="Chat"/>
