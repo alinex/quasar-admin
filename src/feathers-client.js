@@ -12,4 +12,7 @@ const feathersClient = feathers()
   .configure(socketio(socket))
   .configure(authentication({ storage: window.localStorage }))
 
+// new code: register service
+feathersClient.service('info')
+
 export default feathersClient
